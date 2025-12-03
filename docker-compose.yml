@@ -1,0 +1,32 @@
+services:
+  client:
+    image: client:v1.0.2
+    build:
+      context: ./client
+      args:
+        API_HOST: localhost
+        API_PORT: 8086
+        API_BASE: /api
+    container_name: exu2-cliente
+    ports:
+      - "5173:80"
+    networks:
+      - exu2-jcr-net
+    depends_on:
+      - operations
+
+  operations:
+    image: operations:v1.0.2
+    build:
+      context: ./server
+    environment:
+      SERVER_PORT: 8080
+    container_name: exu2-operaciones
+    ports:
+      - "8086:8080"
+    networks:
+      - exu2-jcr-net
+
+networks:
+  exu2-jcr-net:
+    external: true
