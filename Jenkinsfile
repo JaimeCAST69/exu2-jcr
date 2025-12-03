@@ -38,8 +38,7 @@ pipeline {
         stage('Construyendo y desplegando servicios...') {
             steps {
                 bat '''
-                    docker network create --driver bridge exu2-jcr-net || echo "La red ya existe, continuando..."
-                    docker compose -p exu2-jcr up --build -d
+                    docker compose up --build -d
                 '''
             }
         }
