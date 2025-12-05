@@ -61,7 +61,7 @@ function App() {
         <button onClick={handleSaludar} className="btn btn-primary">Saludar</button>
 
         {mensaje && (
-          <div className="alert alert-success mt-4" role="alert">
+          <div>
             {mensaje}
           </div>
         )}
