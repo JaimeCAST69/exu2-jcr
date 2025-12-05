@@ -1,4 +1,4 @@
-package utez.edu.mx.server.modules;
+package utez.edu.mx.server.modules.saludo;
 
 import org.springframework.stereotype.Service;
 
